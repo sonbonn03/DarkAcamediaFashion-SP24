@@ -32,14 +32,14 @@
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/login.css" rel="stylesheet">
 </head>
 <body>
     <!--Header-->
     <jsp:include page="common/header.jsp"></jsp:include>
 
-    <div class="login-page" style="margin-top: 250px;">
-  <div class="form-login">
+<!--    <div class="login-page" style="margin-top: 250px;">
+  <div class="forml-login">
     <form class="register-form">
       <input type="text" placeholder="name"/>
       <input type="password" placeholder="password"/>
@@ -54,7 +54,57 @@
       <p class="message">Not registered? <a href="#">Create an account</a></p>
     </form>
   </div>
-</div>
+</div>-->
+
+<section class="forms-section" style="margin-top:100px">
+  <h1 class="section-title">Login & Signup Forms</h1>
+  <div class="forms">
+    <div class="form-wrapper is-active">
+      <button type="button" class="switcher switcher-login">
+        Login
+        <span class="underline"></span>
+      </button>
+      <form class="form form-login">
+        <fieldset>
+          <legend>Please, enter your email and password for login.</legend>
+          <div class="input-block">
+            <label for="login-email">E-mail</label>
+            <input id="login-email" type="email" required>
+          </div>
+          <div class="input-block">
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" required>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+    </div>
+    <div class="form-wrapper">
+      <button type="button" class="switcher switcher-signup">
+        Sign Up
+        <span class="underline"></span>
+      </button>
+      <form class="form form-signup">
+        <fieldset>
+          <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+          <div class="input-block">
+            <label for="signup-username">Username</label>
+            <input id="signup-email" type="text" required>
+          </div>
+          <div class="input-block">
+            <label for="signup-email">E-mail</label>
+            <input id="signup-email" type="email" required>
+          </div>
+          <div class="input-block">
+            <label for="signup-password">Password</label>
+            <input id="signup-password" type="password" required>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn-signup">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</section>
 
 
 
