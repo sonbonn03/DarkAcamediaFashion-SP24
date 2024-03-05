@@ -112,7 +112,6 @@
 
         <!-- Featurs Section End -->
 
-
         <!-- Fruits Shop Start-->
         <div class="container-fluid fruite py-5">
             <div class="container py-5">
