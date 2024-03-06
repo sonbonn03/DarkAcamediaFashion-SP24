@@ -1,6 +1,6 @@
 <%-- 
-    Document   : home
-    Created on : Mar 5, 2024, 3:11:34 AM
+    Document   : product
+    Created on : Mar 6, 2024, 2:42:00 PM
     Author     : Admin
 --%>
 
@@ -35,83 +35,17 @@
         <!-- Template Stylesheet -->
         <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
     </head>
-
+    
     <body>
-
-
-        <!-- Spinner End -->
-
-
-        <!-- Navbar start -->
+           
+        
+        <!-- Header -->
         <jsp:include page="common/header.jsp"></jsp:include>
-        <!-- Navbar End -->
-
-
-        <!-- Modal Search Start -->
-        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-flex align-items-center">
-                        <div class="input-group w-75 mx-auto d-flex">
-                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal Search End -->
-
-
-        <!-- Hero Start -->
-        <div class="container-fluid py-5 mb-5 hero-header">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-md-12 col-lg-7">
-                        <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
-                        <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
-<!--                        Search home
-                        <div class="position-relative mx-auto">
-                            <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Search">
-                            <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Submit Now</button>
-                        </div>-->
-                    </div>
-                    <div class="col-md-12 col-lg-5">
-                        <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="carousel-item active rounded">
-                                    <img src="${pageContext.request.contextPath}/img/hero-img-1.png" class="img-fluid w-100 h-100 bg-secondary rounded" alt="First slide">
-                                    <a href="#" class="btn px-4 py-2 text-white rounded">Fruites</a>
-                                </div>
-                                <div class="carousel-item rounded">
-                                    <img src="${pageContext.request.contextPath}/img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                    <a href="#" class="btn px-4 py-2 text-white rounded">Vesitables</a>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Hero End -->
-
-
-        <!-- Featurs Section End -->
-
-        <!-- Fruits Shop Start-->
-        <div class="container-fluid fruite py-5">
+       
+        
+        
+        <div class="container-fluid fruite py-5" style="
+                    margin-top: 100px;">
             <div class="container py-5">
                 <div class="tab-class text-center">
                     <div class="row g-4">
@@ -122,7 +56,22 @@
                             <ul class="nav nav-pills d-inline-flex text-center mb-5">
                                 <li class="nav-item">
                                     <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
-                                        <span class="text-dark" style="width: 130px;">Views All Products</span>
+                                        <span class="text-dark" style="width: 130px;">All Products</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
+                                        <span class="text-dark" style="width: 130px;">Sweet fruit</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
+                                        <span class="text-dark" style="width: 130px;">Sour fruit</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
+                                        <span class="text-dark" style="width: 130px;">Bitter fruit</span>
                                     </a>
                                 </li>
                             </ul>
@@ -445,16 +394,15 @@
                 </div>      
             </div>
         </div>
-        <!-- Fruits Shop End-->
-        <jsp:include page="common/footer.jsp"></jsp:include>
-
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
-
         
-    <!-- JavaScript Libraries -->
+    </body>
+    
+    
+            <!-- Fruits Shop End-->
+        <jsp:include page="common/footer.jsp"></jsp:include>
+    
+    
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="${pageContext.request.contextPath}/lib/easing/easing.min.js"></script>
@@ -464,6 +412,5 @@
 
     <!-- Template Javascript -->
     <script src="${pageContext.request.contextPath}/js/main.js"></script>
-    </body>
-
+    
 </html>
