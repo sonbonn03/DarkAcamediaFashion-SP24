@@ -2,11 +2,15 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>HomeController</servlet-name>
-        <servlet-class>controller.HomeServlet</servlet-class>
+        <servlet-class>controller.homepage.HomeServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ProductDetailServlet</servlet-name>
-        <servlet-class>controller.ProductDetailServlet</servlet-class>
+        <servlet-class>controller.homepage.ProductDetailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DashBoardServlet</servlet-name>
+        <servlet-class>controller.admin.DashBoardServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ProductDetailServlet</servlet-name>
         <url-pattern>/product-detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DashBoardServlet</servlet-name>
+        <url-pattern>/admin/dashboard</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

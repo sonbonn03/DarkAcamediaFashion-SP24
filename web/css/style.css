@@ -27,6 +27,40 @@
 }
 /*** Spinner End ***/
 
+
+/*search*/
+.custom-search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc; /* Thêm viền màu xám nhẹ */
+    border-radius: 4px; /* Bo tròn góc */
+    background-color: #fff; /* Màu nền trắng */
+    padding-right: 10px; /* Khoảng cách phải cho nút tìm kiếm */
+}
+
+.custom-search-input {
+    border: none;
+    padding: 8px 10px;
+    width: 200px; /* Chiều rộng ban đầu của thanh tìm kiếm */
+    outline: none; /* Bỏ đường viền khi focus */
+    border-radius: 4px 0 0 4px; /* Bo tròn góc trái */
+    transition: width 0.3s ease; /* Thời gian chuyển đổi khi mở rộng */
+}
+
+.custom-search-button {
+    background-color: #ffa500; /* Màu nền nút tìm kiếm */
+    border: none;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0; /* Bo tròn góc phải */
+}
+
+.custom-search-input:hover {
+    width: 300px; /* Chiều rộng khi hover */
+}
+
 /* Pagination container */
 .pagination-container {
   display: flex;

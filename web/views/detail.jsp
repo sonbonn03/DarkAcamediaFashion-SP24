@@ -39,7 +39,7 @@
     <body>
 
         <!--header-->
-        <jsp:include page="common/header.jsp"></jsp:include>
+        <jsp:include page="common/home/header.jsp"></jsp:include>
 
 
             <!-- Modal Search Start -->
@@ -178,51 +178,7 @@
                         </a>
                     </div>
                                             
-                    <!--                    <div class="col-lg-4 col-xl-3">
-                                            <div class="row g-4 fruite">
-                                                <div class="col-lg-12">
-                                                    <div class="input-group w-100 mx-auto d-flex mb-4">
-                                                        <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                                                        <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                                                    </div>
-                                                    <div class="mb-4">
-                                                        <h4>Categories</h4>
-                                                        <ul class="list-unstyled fruite-categorie">
-                                                            <li>
-                                                                <div class="d-flex justify-content-between fruite-name">
-                                                                    <a href="#"><i class="fas fa-apple-alt me-2"></i>Apples</a>
-                                                                    <span>(3)</span>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="d-flex justify-content-between fruite-name">
-                                                                    <a href="#"><i class="fas fa-apple-alt me-2"></i>Oranges</a>
-                                                                    <span>(5)</span>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="d-flex justify-content-between fruite-name">
-                                                                    <a href="#"><i class="fas fa-apple-alt me-2"></i>Strawbery</a>
-                                                                    <span>(2)</span>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="d-flex justify-content-between fruite-name">
-                                                                    <a href="#"><i class="fas fa-apple-alt me-2"></i>Banana</a>
-                                                                    <span>(8)</span>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="d-flex justify-content-between fruite-name">
-                                                                    <a href="#"><i class="fas fa-apple-alt me-2"></i>Pumpkin</a>
-                                                                    <span>(5)</span>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>-->
+                    
                 </div>
 
             </div>
@@ -231,7 +187,7 @@
 
 
         <!-- Footer Start -->
-        <jsp:include page="common/footer.jsp"></jsp:include>   
+        <jsp:include page="common/home/footer.jsp"></jsp:include>   
 
 
             <!-- Back to Top -->
