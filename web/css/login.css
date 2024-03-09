@@ -7,7 +7,7 @@
 body {
 	margin: 0;
 	font-family: Roboto, -apple-system, 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
-	background: #3b4465;
+	background: white;
 }
 
 .forms-section {
@@ -20,7 +20,7 @@ body {
 .section-title {
 	font-size: 32px;
 	letter-spacing: 1px;
-	color: #fff;
+	color: #81c408;
 }
 
 .forms {
@@ -273,13 +273,13 @@ body {
 
 .btn-login {
 	color: #fbfdff;
-	background: #a7e245;
+	background: #81c408;
 	transform: translateX(-30%);
 }
 
 .btn-signup {
-	color: #a7e245;
-	background: #fbfdff;
+	color: #fbfdff;
+	background: #81c408;
 	box-shadow: inset 0 0 0 2px #a7e245;
 	transform: translateX(30%);
 }

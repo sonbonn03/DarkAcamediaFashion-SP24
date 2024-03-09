@@ -27,6 +27,42 @@
 }
 /*** Spinner End ***/
 
+/* Pagination container */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Pagination item */
+.pagination-item {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+/* Active page */
+.pagination-item.active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+/* Hover effect on items */
+.pagination-item:hover:not(.active) {
+  background-color: #ddd;
+}
+
+/* Disabled items (prev/next) */
+.pagination-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 
 /*Login*/
 *,
@@ -371,6 +407,11 @@
   display: none;
 }*/
 
+/*css product*/
+.d-flex justify-content-between flex-lg-wrap{
+    position: absolute;
+    top: 800px;
+}
 
 
 /*** Button Start ***/

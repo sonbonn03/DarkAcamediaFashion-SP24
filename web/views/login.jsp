@@ -38,29 +38,12 @@
     <!--Header-->
     <jsp:include page="common/header.jsp"></jsp:include>
 
-<!--    <div class="login-page" style="margin-top: 250px;">
-  <div class="forml-login">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
-    </form>
-  </div>
-</div>-->
 
 <section class="forms-section" style="margin-top:100px">
-  <h1 class="section-title">Login & Signup Forms</h1>
+  <h1 class="section-title">Login & Sign up</h1>
   <div class="forms">
     <div class="form-wrapper is-active">
-      <button type="button" class="switcher switcher-login">
+        <button type="button" class="switcher switcher-login" style="color: #81c408">
         Login
         <span class="underline"></span>
       </button>
@@ -68,7 +51,7 @@
         <fieldset>
           <legend>Please, enter your email and password for login.</legend>
           <div class="input-block">
-            <label for="login-email">E-mail</label>
+            <label for="login-email">Username</label>
             <input id="login-email" type="email" required>
           </div>
           <div class="input-block">
@@ -80,7 +63,7 @@
       </form>
     </div>
     <div class="form-wrapper">
-      <button type="button" class="switcher switcher-signup">
+      <button type="button" class="switcher switcher-signup" style="color: #81c408">
         Sign Up
         <span class="underline"></span>
       </button>
@@ -108,7 +91,7 @@
 
 
 
-x
+
         <!--Footer-->
     <jsp:include page="common/footer.jsp"></jsp:include>
 

@@ -13,7 +13,8 @@ import java.sql.*;
 public class DBContext {
 
     protected Connection connection;
-
+    ResultSet resultSet;
+    PreparedStatement statement;
     /**
      * get an connection
      *
