@@ -76,6 +76,9 @@ public class ProductAdminServlet extends HttpServlet {
             case "add":
                 addProduct(request);
                 break;
+            case "delete":
+                deleteProduct(request);
+                break;
             default:
                 
         }
@@ -142,6 +145,11 @@ public class ProductAdminServlet extends HttpServlet {
     private Category findCategoryById(int categoryId) {
         Category category = productDAO.findCategoryById(categoryId);
         return category;
+    }
+
+    private void deleteProduct(HttpServletRequest request) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        productDAO.delete(id);
     }
 
 }

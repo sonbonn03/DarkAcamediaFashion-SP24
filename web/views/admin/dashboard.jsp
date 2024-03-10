@@ -68,19 +68,20 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>
+                                                <th name="id">Id</th>
                                                 <th width="10%">Name</th>
                                                 <th>Image</th>
                                                 <th>Quantity</th>
                                                 <th>Price</th>
                                                 <th>Category</th>
                                                 <th>Description</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <c:forEach items="${listProduct}" var="p">
                                             <tr>
-                                                <td>${p.id}</td>
+                                                <td name="id">${p.id}</td>
                                                 <td>${p.name}</td>
                                                 <td>
                                                     <img src="${p.image}" width="100" height="100"/>
@@ -89,6 +90,14 @@
                                                 <td>${p.price}</td>
                                                 <td>${p.category.name}</td>
                                                 <td>${p.description}</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-outline-success"> Edit </button>
+                                                    <button type="button" class="btn btn-outline-danger"
+                                                            data-toggle="modal" data-target="#delete-product-modal"
+                                                            onclick="deleteProduct(${p.id})">
+                                                        Delete
+                                                    </button>
+                                                </td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
@@ -102,7 +111,7 @@
                 <!-- /.container-fluid -->
 
                 <jsp:include page="../common/admin/footer-admin.jsp"></jsp:include>
-
+                
                 </div>
                 <!-- /.content-wrapper -->
 
@@ -118,6 +127,7 @@
         <jsp:include page="../common/admin/logoutModal.jsp"></jsp:include>
 
         <jsp:include page="addProduct.jsp"></jsp:include>
+        <jsp:include page="deleteProduct.jsp"></jsp:include>
 
             <!-- Bootstrap core JavaScript-->
         <script src="${pageContext.request.contextPath}/vendor-admin/jquery/jquery.min.js"></script>
