@@ -16,8 +16,6 @@ import model.Category;
  */
 public class ProductDAO extends DBContext {
 
-    
-
     public List<Product> findAll() {
         List<Product> listFound = new ArrayList<>();
         // connect with db
@@ -49,6 +47,7 @@ public class ProductDAO extends DBContext {
         }
         return listFound;
     }
+
     public List<Product> searchProductByName(String pName) {
         List<Product> listFound = new ArrayList<>();
         // connect with db
@@ -111,7 +110,6 @@ public class ProductDAO extends DBContext {
         return productFound;
     }
 
-
     public List<Product> findByCategory(String categoryId) {
         List<Product> listFound = new ArrayList<>();
         connection = getConnection();
@@ -121,7 +119,7 @@ public class ProductDAO extends DBContext {
                 + "FROM [dbo].[Product] p\n"
                 + "LEFT JOIN [dbo].[Category] c ON p.categoryID = c.id\n"
                 + "WHERE p.categoryID = ?";
-        
+
         // tao doi tuong PreparedStatement
         try {
             statement = connection.prepareStatement(sql);
@@ -144,17 +142,71 @@ public class ProductDAO extends DBContext {
             }
         } catch (Exception e) {
             System.err.println(e.getMessage());
-        } finally{
-            
+        } finally {
+
         }
         return listFound;
-        
+
     }
-    
+
     public static void main(String[] args) {
         for (Product product : new ProductDAO().searchProductByName("am")) {
             System.out.println(product);
         }
+    }
+
+    public Category findCategoryById(int categoryId) {
+        String sql = "SELECT * FROM Category WHERE id = ?";
+        Category category = null;
+        try {
+            connection = getConnection();
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, categoryId);
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                category = new Category(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("description"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return category;
+    }
+
+    public void add(Product product) {
+        connection = getConnection();
+        String sql = "INSERT INTO [dbo].[Product]\n"
+                + "           ([name]\n"
+                + "           ,[image]\n"
+                + "           ,[quantity]\n"
+                + "           ,[price]\n"
+                + "           ,[description]\n"
+                + "           ,[categoryID])\n"
+                + "     VALUES\n"
+                + "           (?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?\n"
+                + "           ,?)";
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, product.getName());
+            statement.setString(2, product.getImage());
+            statement.setInt(3, product.getQuantity());
+            statement.setFloat(4, product.getPrice());
+            statement.setString(5, product.getDescription());
+            statement.setInt(6, product.getCategory().getId());
+
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

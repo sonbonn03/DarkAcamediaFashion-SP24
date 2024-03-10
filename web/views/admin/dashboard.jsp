@@ -83,7 +83,7 @@
                                                 <td>${p.id}</td>
                                                 <td>${p.name}</td>
                                                 <td>
-                                                    <img src="${p.image}" width="100" height="100" alt="alt"/>
+                                                    <img src="${p.image}" width="100" height="100"/>
                                                 </td>
                                                 <td>${p.quantity}</td>
                                                 <td>${p.price}</td>
