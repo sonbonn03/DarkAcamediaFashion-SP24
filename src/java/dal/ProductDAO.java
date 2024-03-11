@@ -211,19 +211,45 @@ public class ProductDAO extends DBContext {
 
     public void delete(int id) {
         connection = getConnection();
-        String sql="DELETE FROM Product WHERE id = ?";
-        
-        try {
-        connection = getConnection();
-        statement = connection.prepareStatement(sql);
-        statement.setInt(1, id);
+        String sql = "DELETE FROM Product WHERE id = ?";
 
-        statement.executeUpdate();
-        
-    } catch (SQLException e) {
-        e.printStackTrace();
+        try {
+
+            statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
-        
+
+    public void edit(Product product) {
+        connection = getConnection();
+        String sql = "UPDATE [dbo].[Product]\n"
+                + "   SET [name] = ?\n"
+                + "      ,[image] = ?\n"
+                + "      ,[quantity] = ?\n"
+                + "      ,[price] = ?\n"
+                + "      ,[description] = ?\n"
+                + "      ,[categoryID] = ?\n"
+                + " WHERE id = ?";
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, product.getName());
+            statement.setString(2, product.getImage());
+            statement.setInt(3, product.getQuantity());
+            statement.setFloat(4, product.getPrice());
+            statement.setString(5, product.getDescription());
+            statement.setInt(6, product.getCategory().getId());
+            statement.setInt(7, product.getId());
+            statement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

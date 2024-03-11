@@ -38,7 +38,7 @@
 
     <body>
 
-        <jsp:include page="common/header.jsp"></jsp:include>
+        <jsp:include page="../common/home/header.jsp"></jsp:include>
 
 
         <!-- Modal Search Start -->
@@ -233,7 +233,7 @@
 
 
         <!-- Footer -->
-        <jsp:include page="common/footer.jsp"></jsp:include>
+        <jsp:include page="../common/home/footer.jsp"></jsp:include>
         
 
 

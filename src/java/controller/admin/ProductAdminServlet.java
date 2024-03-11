@@ -79,8 +79,10 @@ public class ProductAdminServlet extends HttpServlet {
             case "delete":
                 deleteProduct(request);
                 break;
+            case "edit":
+                editProduct(request);
             default:
-                
+
         }
         response.sendRedirect("dashboard");
     }
@@ -150,6 +152,55 @@ public class ProductAdminServlet extends HttpServlet {
     private void deleteProduct(HttpServletRequest request) {
         int id = Integer.parseInt(request.getParameter("id"));
         productDAO.delete(id);
+    }
+
+    private void editProduct(HttpServletRequest request) throws IOException {
+        // get data
+        try {
+            int id = Integer.parseInt(request.getParameter("id"));
+            String name = request.getParameter("name");
+            float price = Float.parseFloat(request.getParameter("price"));
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+            String description = request.getParameter("description");
+            int categoryId = Integer.parseInt(request.getParameter("categoryId"));
+
+            // image
+            Part part = request.getPart("image");
+            String imagePath = null;
+            if (part.getSubmittedFileName() == null
+                    || part.getSubmittedFileName().trim().isEmpty()
+                    || part == null) {
+                imagePath = request.getParameter("currentImage");
+            } else {
+                // duong dan luu anh
+                String path = request.getServletContext().getRealPath("/image");
+                File dir = new File(path);
+                // xem duongd an nay ton tai chua
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                }
+
+                File image = new File(dir, part.getSubmittedFileName());
+                // ghi file vao trong duong dan
+                part.write(image.getAbsolutePath());
+                // lay ra cai context path cua project
+                imagePath = request.getContextPath() + "/image/" + image.getName();
+
+                Category category = findCategoryById(categoryId);
+                Product product = new Product();
+                product.setName(name);
+                product.setPrice(price);
+                product.setQuantity(quantity);
+                product.setDescription(description);
+                product.setCategory(category);
+                product.setImage(imagePath);
+
+                productDAO.edit(product);
+            }
+
+        } catch (NumberFormatException | IOException | ServletException ex) {
+            ex.printStackTrace();
+        }
     }
 
 }

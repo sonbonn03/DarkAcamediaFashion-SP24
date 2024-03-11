@@ -141,7 +141,7 @@
                         </div>
 
                     </div>
-                    <div class="tab-content">
+                                        <div class="tab-content" style="height: 1130px; overflow-y: scroll;">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
                                 <div class="col-lg-12">

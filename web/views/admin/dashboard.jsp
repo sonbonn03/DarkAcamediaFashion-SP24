@@ -82,16 +82,20 @@
                                         <c:forEach items="${listProduct}" var="p">
                                             <tr>
                                                 <td name="id">${p.id}</td>
-                                                <td>${p.name}</td>
-                                                <td>
+                                                <td name="name">${p.name}</td>
+                                                <td name="image">
                                                     <img src="${p.image}" width="100" height="100"/>
                                                 </td>
-                                                <td>${p.quantity}</td>
-                                                <td>${p.price}</td>
-                                                <td>${p.category.name}</td>
-                                                <td>${p.description}</td>
+                                                <td name="quantity">${p.quantity}</td>
+                                                <td name="price">${p.price}</td>
+                                                <td name="category">${p.category.name}</td>
+                                                <td name="description">${p.description}</td>
                                                 <td>
-                                                    <button type="button" class="btn btn-outline-success"> Edit </button>
+                                                    <button type="button" class="btn btn-outline-success"
+                                                            data-toggle="modal" data-target="#edit-product-modal"
+                                                            onclick="editProduct(this)"> 
+                                                        Edit 
+                                                    </button>
                                                     <button type="button" class="btn btn-outline-danger"
                                                             data-toggle="modal" data-target="#delete-product-modal"
                                                             onclick="deleteProduct(${p.id})">
@@ -128,6 +132,7 @@
 
         <jsp:include page="addProduct.jsp"></jsp:include>
         <jsp:include page="deleteProduct.jsp"></jsp:include>
+        <jsp:include page="editProduct.jsp"></jsp:include>
 
             <!-- Bootstrap core JavaScript-->
         <script src="${pageContext.request.contextPath}/vendor-admin/jquery/jquery.min.js"></script>
