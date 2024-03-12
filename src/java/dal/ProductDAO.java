@@ -246,6 +246,7 @@ public class ProductDAO extends DBContext {
             statement.setInt(6, product.getCategory().getId());
             statement.setInt(7, product.getId());
             statement.executeUpdate();
+            System.out.println(product.getPrice());
         } catch (Exception e) {
             e.printStackTrace();
         }

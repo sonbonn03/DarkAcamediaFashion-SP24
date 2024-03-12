@@ -55,7 +55,7 @@
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
+                                
                             </button>
                         </div>
                         <div class="modal-body d-flex align-items-center">
@@ -76,7 +76,7 @@
                     <div class="row g-5 align-items-center">
                         <div class="col-md-12 col-lg-7">
                             <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
-                            <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
+                            <h1 class="mb-5 display-3 text-primary">Organic Fruits Foods</h1>
                             <!--                        Search home
                                                     <div class="position-relative mx-auto">
                                                         <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Search">
@@ -91,8 +91,8 @@
                                     <a href="#" class="btn px-4 py-2 text-white rounded">Fruites</a>
                                 </div>
                                 <div class="carousel-item rounded">
-                                    <img src="${pageContext.request.contextPath}/img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                                    <a href="#" class="btn px-4 py-2 text-white rounded">Vesitables</a>
+                                    <img src="${pageContext.request.contextPath}/img/quang-cao.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                                    <a href="#" class="btn px-4 py-2 text-white rounded">Fruites</a>
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
@@ -141,7 +141,7 @@
                         </div>
 
                     </div>
-                    <div class="tab-content" style="height: 1130px; overflow-y: scroll;">
+                                        <div class="tab-content" style="height: 1100px; overflow-y: scroll; overflow-x: hidden;">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
                                 <div class="col-lg-12">
@@ -160,7 +160,7 @@
                                                         <div class="d-flex justify-content-between flex-lg-wrap">
                                                             <p class="text-dark fs-5 fw-bold mb-0">$${p.price} / kg</p>
                                                             <a href="product-detail?id=${p.id}" class="btn border border-secondary rounded-pill px-3 text-primary"> Product detail</a>
-                                                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                            <a href="buy?pid=${p.id}&quantity=1" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -171,25 +171,7 @@
                             </div>
                         </div>
                         <br/>
-                        <!--pagination-->
-                        <div>
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination-container">
-                                    <li class="pagination-item pagination-disabled">prev</li>
-                                    <li class="pagination-item active">1</li>
-                                    <li class="pagination-item">2</li>
-                                    <li class="pagination-item">3</li>
-                                    <li class="pagination-item">4</li>
-                                    <li class="pagination-item">5</li>
-                                    <li class="pagination-item">6</li>
-                                    <li class="pagination-item">7</li>
-                                    <li class="pagination-item">8</li>
-                                    <li class="pagination-item">9</li>
-                                    <li class="pagination-item">10</li>
-                                    <li class="pagination-item">next</li>
-                                </ul>
-                            </nav>
-                        </div>
+                        
                     </div>
                 </div>      
             </div>

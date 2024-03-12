@@ -74,21 +74,21 @@ public class AccountDAO extends DBContext {
         String sql = "SELECT  [username]\n"
                 + "  FROM [FruitShop].[dbo].[Account] \n"
                 + "  WHERE username = ? ";
-        
+
         try {
             statement = connection.prepareStatement(sql);
             statement.setString(1, username);
             resultSet = statement.executeQuery();
-            if(resultSet.next()){
+            if (resultSet.next()) {
                 return true;
             }
-            
+
         } catch (Exception e) {
             System.out.println(e);
         }
-            
-        return false;    
-        
+
+        return false;
+
     }
 
 }

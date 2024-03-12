@@ -34,6 +34,18 @@
 
         <!-- Template Stylesheet -->
         <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
+        <style>
+            .off{
+                opacity:  0.7;
+                pointer-events: none;
+            }
+            .mess-stock{
+                display: none;
+            }
+            .mess-stock.on{
+                display: block;
+            }
+        </style>
     </head>
 
     <body>
@@ -66,7 +78,7 @@
             <div class="container-fluid page-header py-5">
                 <h1 class="text-center text-white display-6">Product Detail</h1>
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/home">Home</a></li>
+                    <li class="breadcrumb-item"><a href="home">Home</a></li>
                     <li class="breadcrumb-item active text-white">Product Detail</li>
                 </ol>
             </div>
@@ -91,20 +103,32 @@
                                 <p class="mb-3">Category: ${ProductFoundId.category.name}</p>
                                 <h5 class="fw-bold mb-3">$${ProductFoundId.price} /kg</h5>
                                 <p class="mb-4">${ProductFoundId.category.description}</p>
-                                <div class="input-group quantity mb-5" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-minus rounded-circle bg-light border" >
-                                            <i class="fa fa-minus"></i>
-                                        </button>
+                                <form method="get" action="buy">
+                                    <input type="text" name="pid" value="${ProductFoundId.id}" hidden/>
+                                    <div class="input-group quantity mb-5" style="width: 100px;">
+                                        
+                                        <!--minus-->
+                                        <div class="input-group-btn">
+                                            <button class="quantity-left-minus btn btn-sm btn-minus rounded-circle bg-light border" data-type="minus" >
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        
+                                        <input type="text" class="form-control form-control-sm text-center border-0" id="quantity" name="quantity" min="1" max="${ProductFoundId.quantity}" value="1">
+                                        
+                                        <!--plus-->
+                                        <div class="input-group-btn">
+                                            <button class="quantity-right-plus btn btn-sm btn-plus rounded-circle bg-light border" data-type="plus">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <input type="text" class="form-control form-control-sm text-center border-0" value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <a href="#" class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                        
+                                    <p class="mess-stock bg-danger text-center card text-white ${ProductFoundId.quantity == 0 ? 'on':''}">The product is out of stock</p>
+                                    <button type="submit" class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">
+                                        <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                    </button>
+                                </form>
                             </div>
                             <div class="col-lg-12">
                                 <nav>
@@ -119,21 +143,21 @@
                                     <div class="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
                                         <p>${ProductFoundId.category.description}</p>
                                         <p>${ProductFoundId.description}</p>
-                                        
+
                                     </div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                                            <div class=" text-center col-lg-4 col-xl-3" style="color: greenyellow">
-                                                <!--back to home-->
-                        <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill" href="/home">
-                            <span class="text-dark" style="width: 130px;">Back to home page</span>
+                    <div class=" text-center col-lg-4 col-xl-3" style="color: greenyellow">
+                        <!--back to home-->
+                        <a class="d-flex justify-content-center m-2 py-2 bg-light rounded-pill active" href="${pageContext.request.contextPath}/home">
+                            <span style="color: #81c408">Back to home page</span>
                         </a>
                     </div>
-                                            
-                    
+
+
                 </div>
 
             </div>
@@ -159,6 +183,50 @@
 
         <!-- Template Javascript -->
         <script src="${pageContext.request.contextPath}/js/main.js"></script>
+        <script>
+            //Plus & Minus for Quantity product
+            $(document).ready(function () {
+                var quantity = 1;
+                const maxQuantity = document.getElementById("quantity").max;
+                console.log(maxQuantity);
+                $('.quantity-right-plus').click(function (e) {
+                    e.preventDefault();
+                    var quantity = parseInt($('#quantity').val());
+                    if (quantity <= maxQuantity - 1) {
+                        $('#quantity').val(quantity + 1);
+                    }
+                });
+
+                $('.quantity-left-minus').click(function (e) {
+                    e.preventDefault();
+                    var quantity = parseInt($('#quantity').val());
+                    if (quantity > 1) {
+                        $('#quantity').val(quantity - 1);
+                    }
+                });
+
+            });
+
+            const formBuy = document.getElementById("formBuy");
+            
+            formBuy.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const elementQuantity = document.getElementById("quantity");
+                const messStock = document.querySelector(".mess-stock");
+                if (parseInt(elementQuantity.value) < 0) {
+                    messStock.innerHTML = "Quantity can't nagative number";
+                    messStock.classList.add("on");
+                    return;
+                } else if (parseInt(elementQuantity.max) < parseInt(elementQuantity.value)) {
+                    messStock.innerHTML = "The number of stock in the shop is not enough<br>Please decrease quantity";
+                    messStock.classList.add("on");
+                    return;
+                } else {
+                    formBuy.submit();
+                }
+                ;
+            });
+        </script>
     </body>
 
 </html>

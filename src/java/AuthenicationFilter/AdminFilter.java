@@ -109,7 +109,7 @@ public class AdminFilter implements Filter {
 
         String uri = req.getRequestURI();
 
-        HttpSession session = req.getSession(false);
+        HttpSession session = req.getSession();
         Account account = (Account) session.getAttribute("account");
         if(account != null){
             if(account.getRoleId() != 2){

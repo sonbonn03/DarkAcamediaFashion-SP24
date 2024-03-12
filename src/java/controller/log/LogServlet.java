@@ -109,7 +109,6 @@ public class LogServlet extends HttpServlet {
                     request.getRequestDispatcher(url).forward(request, response);
                 }
                 return;
-                
             default:
                 url = "views/home.jsp";
         }
@@ -178,4 +177,5 @@ public class LogServlet extends HttpServlet {
         }
 
     }
+
 }

@@ -12,7 +12,7 @@
             <p>Dashboard</p>
         </li>
         
-        <li class="breadcrumb-item ml-auto">
+        <li class="ml-auto">
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal">
                 Add Product
             </button>

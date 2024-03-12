@@ -6,7 +6,7 @@
     </filter>
     <filter-mapping>
         <filter-name>AdminFilter</filter-name>
-        <url-pattern>/admin/dashboard</url-pattern>
+        <url-pattern>/admin/dashboard/*</url-pattern>
     </filter-mapping>
     <servlet>
         <servlet-name>HomeController</servlet-name>
@@ -15,6 +15,18 @@
     <servlet>
         <servlet-name>ProductDetailServlet</servlet-name>
         <servlet-class>controller.homepage.ProductDetailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>controller.homepage.CartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>controller.homepage.CheckoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProcessServlet</servlet-name>
+        <servlet-class>controller.homepage.ProcessServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DashBoardServlet</servlet-name>
@@ -27,6 +39,10 @@
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>controller.log.LogServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BuyProductServlet</servlet-name>
+        <servlet-class>controller.homepage.BuyProductServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
@@ -47,6 +63,22 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuyProductServlet</servlet-name>
+        <url-pattern>/buy</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessServlet</servlet-name>
+        <url-pattern>/process</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

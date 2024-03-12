@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div class="modal fade" id="edit-product-modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="editProduct" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -67,7 +67,7 @@
                                 <label class="custom-file-label">Choose file</label>
                             </div>
                         </div>
-                        <img id="previewImage2" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="Preview"
+                        <img id="previewImage2" src="" alt="Preview"
                              style="display: none; max-width: 300px; max-height: 300px;">
                         <input type="hidden" id="currentImage" name="currentImage" value="">
                     </div>
@@ -107,7 +107,6 @@
         } else if (!$.isNumeric(quantity) || parseInt(price) < 0) {
             $('#priceEditError').html('The number of fruits must be a number and cannot be less than 0');
         }
-        // Kiểm tra nếu không có lỗi thì submit form                                 let error = '';
         $('.error').each(function () {
             error += $(this).html();
         });
@@ -131,16 +130,14 @@
     function editProduct(button) {
         let id = $(button).closest('tr').find('td[name="id"]').text().trim();
         let name = $(button).closest('tr').find('td[name="name"]').text().trim();
-        let author = $(button).closest('tr').find('td[name="author"]').text().trim();
         let price = $(button).closest('tr').find('td[name="price"]').text().trim().split('$')[0];
-        console.log(price);
         let quantity = $(button).closest('tr').find('td[name="quantity"]').text().trim();
         let categoryText = $(button).closest('tr').find('td[name="category"]').text().trim();
         let description = $(button).closest('tr').find('td[name="description"]').text().trim();
         let image = $(button).closest('tr').find('td[name="image"]').find('img').attr('src');
+        console.log(image);
         $('#idEditInput').val(id);
         $('#nameEditInput').val(name);
-        $('#authorEditInput').val(author);
         $('#priceEditInput').val(price);
         $('#quantityEditInput').val(quantity);
         //loop through category list to select the category

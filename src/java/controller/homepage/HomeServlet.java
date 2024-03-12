@@ -7,14 +7,16 @@ package controller.homepage;
 import dal.CategoryDAO;
 import dal.ProductDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.Cart;
 import model.Category;
+import model.Item;
 import model.Product;
 
 /**
@@ -26,41 +28,6 @@ public class HomeServlet extends HttpServlet {
     ProductDAO productDAO = new ProductDAO();
     CategoryDAO categoryDAO = new CategoryDAO();
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet HomeController</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet HomeController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -73,32 +40,37 @@ public class HomeServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("listProduct", listProduct);
         session.setAttribute("listCategory", listCategory);
+        String url = request.getRequestURI();
+        session.setAttribute("prevPage", url);
+        
+        //Cart
+        Cookie[] arr = request.getCookies();
+        String txt = "";
+        if (arr != null) {
+            for (Cookie x : arr) {
+                if (x.getName().equals("cart")) {
+                    txt += x.getValue();
+                }
+            }
+        }
+        List<Product> list = productDAO.findAll();
+        Cart cart = new Cart(txt, list);
+        List<Item> listItem = cart.getList();
+        int n;
+        if (listItem != null || listItem.isEmpty()) {
+            n = listItem.size();
+        } else {
+            n = 0;
+        }
+        request.setAttribute("size", n);
         request.getRequestDispatcher("views/home.jsp").forward(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.sendRedirect("home");
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
     private List<Product> findProductDoGet(HttpServletRequest request) {
         //get ve search
@@ -115,12 +87,12 @@ public class HomeServlet extends HttpServlet {
                 request.setAttribute("selectedCategoryId", selectedCategoryId);
                 listProduct = productDAO.findByCategory(selectedCategoryId);
                 break;
-                
+
             case "searchProduct":
                 String keyword = request.getParameter("keyword");
                 listProduct = productDAO.searchProductByName(keyword);
                 break;
-                
+
             default:
                 listProduct = productDAO.findAll();
         }

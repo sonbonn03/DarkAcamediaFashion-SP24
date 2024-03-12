@@ -81,6 +81,7 @@ public class ProductAdminServlet extends HttpServlet {
                 break;
             case "edit":
                 editProduct(request);
+                break;
             default:
 
         }
@@ -117,7 +118,7 @@ public class ProductAdminServlet extends HttpServlet {
             } else {
 
                 // duong dan luu anh luu len server
-                String path = request.getServletContext().getRealPath("/image");
+                String path = request.getServletContext().getRealPath("/images");
                 File filePath = new File(path);
                 //xem duong dan ton tai chua
                 if (!filePath.exists()) {
@@ -127,7 +128,7 @@ public class ProductAdminServlet extends HttpServlet {
                 // ghi file vao duong dan
                 part.write(image.getAbsolutePath());
                 // lay ra context path cua project
-                imagePath = request.getContextPath() + "/image/" + image.getName();
+                imagePath = request.getContextPath() + "/images/" + image.getName();
             }
             Category category = findCategoryById(categoryId);
             Product product = new Product();
@@ -162,8 +163,9 @@ public class ProductAdminServlet extends HttpServlet {
             float price = Float.parseFloat(request.getParameter("price"));
             int quantity = Integer.parseInt(request.getParameter("quantity"));
             String description = request.getParameter("description");
-            int categoryId = Integer.parseInt(request.getParameter("categoryId"));
-
+            int categoryId = Integer.parseInt(request.getParameter("category"));
+            Category category = new Category();
+            category.setId(categoryId);
             // image
             Part part = request.getPart("image");
             String imagePath = null;
@@ -173,7 +175,7 @@ public class ProductAdminServlet extends HttpServlet {
                 imagePath = request.getParameter("currentImage");
             } else {
                 // duong dan luu anh
-                String path = request.getServletContext().getRealPath("/image");
+                String path = request.getServletContext().getRealPath("/images");
                 File dir = new File(path);
                 // xem duongd an nay ton tai chua
                 if (!dir.exists()) {
@@ -184,9 +186,8 @@ public class ProductAdminServlet extends HttpServlet {
                 // ghi file vao trong duong dan
                 part.write(image.getAbsolutePath());
                 // lay ra cai context path cua project
-                imagePath = request.getContextPath() + "/image/" + image.getName();
+                imagePath = request.getContextPath() + "/images/" + image.getName();
 
-                Category category = findCategoryById(categoryId);
                 Product product = new Product();
                 product.setName(name);
                 product.setPrice(price);
@@ -194,7 +195,8 @@ public class ProductAdminServlet extends HttpServlet {
                 product.setDescription(description);
                 product.setCategory(category);
                 product.setImage(imagePath);
-
+                product.setId(id);
+                System.out.println(category);
                 productDAO.edit(product);
             }
 
