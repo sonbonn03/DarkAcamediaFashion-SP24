@@ -19,10 +19,9 @@
             </button>
             <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="views/home.jsp" class="nav-item nav-link active">Home</a>
+                    <a href="${pageContext.request.contextPath}/home" class="nav-item nav-link active">Home</a>
                     <c:if test="${sessionScope.account.roleId == 2}">
-                    <a href="admin/dashboard" class="nav-item nav-link active">Control</a>
-                        
+                    <a href="${pageContext.request.contextPath}/admin/dashboard" class="nav-item nav-link active">Control</a>
                     </c:if>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -48,7 +47,7 @@
                         <i class="fa fa-shopping-bag fa-2x"></i>
                         <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
                     </a>
-                    <a href="#" class="my-auto">
+                    <a class="my-auto">
                         <i class="fas fa-user fa-2x"></i>
                     </a>
                     <div class="nav-item dropdown">

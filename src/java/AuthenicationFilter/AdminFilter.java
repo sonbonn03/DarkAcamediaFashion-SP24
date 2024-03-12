@@ -5,7 +5,6 @@
 
 package AuthenicationFilter;
 
-import constant.CommonConst;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
@@ -111,7 +110,7 @@ public class AdminFilter implements Filter {
         String uri = req.getRequestURI();
 
         HttpSession session = req.getSession(false);
-        Account account = (Account) session.getAttribute(CommonConst.SESSION_ACCOUNT);
+        Account account = (Account) session.getAttribute("account");
         if(account != null){
             if(account.getRoleId() != 2){
                 System.out.println(account.getRoleId());

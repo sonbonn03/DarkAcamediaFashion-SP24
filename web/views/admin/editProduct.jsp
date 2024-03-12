@@ -17,7 +17,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="editBookForm" action="product?action=edit" method="POST" enctype="multipart/form-data">
+                <form id="editProductForm" action="product?action=edit" method="POST" enctype="multipart/form-data">
                     <!--id-->
                     <div class="form-group" style="display: none">
                         <input type="text" class="form-control" id="idEditInput" name="id">
@@ -63,7 +63,7 @@
                             </div>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="imageEdit" name="image"
-                                       onchange="displayImage2(this)">
+                                       onchange="displayImage(this)">
                                 <label class="custom-file-label">Choose file</label>
                             </div>
                         </div>
@@ -80,15 +80,15 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary" form="editBookForm"
-                        onclick="validateForm2()">Update</button>
+                <button type="submit" class="btn btn-primary" form="editProductForm"
+                        onclick="validateForm()">Update</button>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    function validateForm2() {
+    function validateForm() {
         let name = $('#nameEditInput').val();
         let price = $('#priceEditInput').val();
         let quantity = $('#quantityEditInput').val();
@@ -112,12 +112,12 @@
             error += $(this).html();
         });
         if (error === '') {
-            $('#editBookForm').submit();
+            $('#editProductForm').submit();
         } else {
             event.preventDefault();
         }
     }
-    function displayImage2(input) {
+    function displayImage(input) {
         var previewImage = document.getElementById("previewImage2");
         var file = input.files[0];
         var reader = new FileReader();

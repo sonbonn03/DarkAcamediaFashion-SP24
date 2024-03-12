@@ -55,7 +55,7 @@
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                
+
                             </button>
                         </div>
                         <div class="modal-body d-flex align-items-center">
@@ -141,7 +141,7 @@
                         </div>
 
                     </div>
-                                        <div class="tab-content" style="height: 1130px; overflow-y: scroll;">
+                    <div class="tab-content" style="height: 1130px; overflow-y: scroll;">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
                                 <div class="col-lg-12">
@@ -171,7 +171,7 @@
                             </div>
                         </div>
                         <br/>
-                            <!--pagination-->
+                        <!--pagination-->
                         <div>
                             <nav aria-label="Page navigation">
                                 <ul class="pagination-container">

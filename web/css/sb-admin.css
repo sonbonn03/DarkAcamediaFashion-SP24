@@ -10670,7 +10670,7 @@ body {
 
 .sidebar {
   width: 90px !important;
-  background-color: #212529;
+  background-color: #fff;
   min-height: calc(100vh - 56px);
 }
 
@@ -10703,6 +10703,7 @@ body {
 }
 
 .sidebar .nav-item.dropdown .dropdown-toggle::after {
+    color: #34ce57;
   display: none;
 }
 
@@ -10740,6 +10741,7 @@ body {
     top: 0;
   }
   .sidebar .nav-item.dropdown .dropdown-toggle::after {
+      color: #34ce57;
     display: block;
   }
   .sidebar.toggled {

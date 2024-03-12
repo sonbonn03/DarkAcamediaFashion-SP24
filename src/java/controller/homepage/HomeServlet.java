@@ -4,7 +4,6 @@
  */
 package controller.homepage;
 
-import constant.CommonConst;
 import dal.CategoryDAO;
 import dal.ProductDAO;
 import java.io.IOException;
@@ -72,8 +71,8 @@ public class HomeServlet extends HttpServlet {
 
         //set listProduct, listCategory vao session
         HttpSession session = request.getSession();
-        session.setAttribute(CommonConst.SESSION_PRODUCT, listProduct);
-        session.setAttribute(CommonConst.SESSION_CATEGORY, listCategory);
+        session.setAttribute("listProduct", listProduct);
+        session.setAttribute("listCategory", listCategory);
         request.getRequestDispatcher("views/home.jsp").forward(request, response);
     }
 

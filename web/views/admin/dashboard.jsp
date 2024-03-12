@@ -53,15 +53,11 @@
                         <!-- Breadcrumbs-->
                     <jsp:include page="../common/admin/breadcrumbs.jsp"></jsp:include>
 
-                        <!-- Icon Cards-->
-                    <jsp:include page="../common/admin/iconCart.jsp"></jsp:include>
-
-
                         <!-- DataTables Example -->
                         <div class="card mb-3">
                             <div class="card-header">
                                 <i class="fas fa-table"></i>
-                                Data Table Example
+                                Data Table Fruit Products
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -127,8 +123,6 @@
             <i class="fas fa-angle-up"></i>
         </a>
 
-        <!-- Logout Modal-->
-        <jsp:include page="../common/admin/logoutModal.jsp"></jsp:include>
 
         <jsp:include page="addProduct.jsp"></jsp:include>
         <jsp:include page="deleteProduct.jsp"></jsp:include>

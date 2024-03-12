@@ -2,9 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package controller.login;
+package controller.log;
 
-import constant.CommonConst;
 import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,7 +18,7 @@ import model.Account;
  *
  * @author Admin
  */
-public class LoginServlet extends HttpServlet {
+public class LogServlet extends HttpServlet {
 
     AccountDAO accountDAO = new AccountDAO();
 
@@ -128,7 +127,7 @@ public class LoginServlet extends HttpServlet {
     }// </editor-fold>
 
     private void logOut(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.getSession().removeAttribute(CommonConst.SESSION_ACCOUNT);
+        request.getSession().removeAttribute("account");
         response.sendRedirect("home");
     }
 
@@ -144,7 +143,7 @@ public class LoginServlet extends HttpServlet {
 
         Account accFound = accountDAO.findAccFound(account);
         if (accFound != null) {
-            request.getSession().setAttribute(CommonConst.SESSION_ACCOUNT,
+            request.getSession().setAttribute("account",
                     accFound);
             response.sendRedirect("home");
             return null;
@@ -172,7 +171,7 @@ public class LoginServlet extends HttpServlet {
             account.setPassword(password);
             account.setEmail(email);
             accountDAO.createAccount(account);
-            request.getSession().setAttribute(CommonConst.SESSION_ACCOUNT,
+            request.getSession().setAttribute("account",
                     account); 
             
             return null;

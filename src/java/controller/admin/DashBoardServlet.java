@@ -5,7 +5,6 @@
 
 package controller.admin;
 
-import constant.CommonConst;
 import dal.CategoryDAO;
 import dal.ProductDAO;
 import java.io.IOException;
@@ -64,8 +63,8 @@ public class DashBoardServlet extends HttpServlet {
         HttpSession session = request.getSession();
         List<Product> listProduct = productDAO.findAll();
         List<Category> listCategory = categoryDAO.findAll();
-        session.setAttribute(CommonConst.SESSION_PRODUCT, listProduct);
-        session.setAttribute(CommonConst.SESSION_CATEGORY, listCategory);
+        session.setAttribute("listProduct", listProduct);
+        session.setAttribute("listCategory", listCategory);
         
         // chuyen sang dashboard
         request.getRequestDispatcher("../views/admin/dashboard.jsp").forward(request, response);

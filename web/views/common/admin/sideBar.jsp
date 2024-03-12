@@ -9,37 +9,23 @@
 <html>
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="${pageContext.request.contextPath}/index.html">
+          <div class="nav-link" style="color: #34ce57">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
-        </a>
+        </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/#" id="pagesDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <i class="fas fa-fw fa-folder" style="color: #34ce57"></i>
+          <span style="color: #34ce57">Pages</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/login.html">Login</a>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/register.html">Register</a>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/404.html">404 Page</a>
-          <a class="dropdown-item" href="${pageContext.request.contextPath}/blank.html">Blank Page</a>
+        <div class="dropdown-menu" style="color: #34ce57" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header" style="color: #34ce57">Login Screens:</h6>
+          <a class="dropdown-item" style="color: #34ce57" href="${pageContext.request.contextPath}/login?action=logout">Logout</a>
+          <a class="dropdown-item" style="color: #34ce57" href="${pageContext.request.contextPath}/register.html">Register</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
+      
     </ul>
 </html>
