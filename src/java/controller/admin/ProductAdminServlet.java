@@ -188,17 +188,17 @@ public class ProductAdminServlet extends HttpServlet {
                 // lay ra cai context path cua project
                 imagePath = request.getContextPath() + "/images/" + image.getName();
 
-                Product product = new Product();
-                product.setName(name);
-                product.setPrice(price);
-                product.setQuantity(quantity);
-                product.setDescription(description);
-                product.setCategory(category);
-                product.setImage(imagePath);
-                product.setId(id);
-                System.out.println(category);
-                productDAO.edit(product);
             }
+            Product product = new Product();
+            product.setName(name);
+            product.setPrice(price);
+            product.setQuantity(quantity);
+            product.setDescription(description);
+            product.setCategory(category);
+            product.setImage(imagePath);
+            product.setId(id);
+            System.out.println(category);
+            productDAO.edit(product);
 
         } catch (NumberFormatException | IOException | ServletException ex) {
             ex.printStackTrace();

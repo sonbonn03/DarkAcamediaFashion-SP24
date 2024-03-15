@@ -22,6 +22,10 @@ public class CheckoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         HttpSession session = request.getSession();
+         Account acount = null;
+        Object a = session.getAttribute("account");
+        if (a != null) {
         List<Product> list = productDAO.findAll();
         Cookie[] arr = request.getCookies();
         String txt = "";
@@ -36,6 +40,9 @@ public class CheckoutServlet extends HttpServlet {
         request.setAttribute("size", cart.getList().size());
         request.setAttribute("cart", cart);
         request.getRequestDispatcher("views/user/checkout.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("login?action=login");
+        }
     }
 
     @Override

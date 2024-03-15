@@ -69,8 +69,8 @@ public class LogServlet extends HttpServlet {
                 url = "views/login.jsp";
                 break;
             case "logout":
-               logOut(request, response);
-               return;
+                logOut(request, response);
+                return;
             default:
                 url = "home";
         }
@@ -99,20 +99,24 @@ public class LogServlet extends HttpServlet {
         switch (action) {
             case "login":
                 url = loginDoPost(request, response);
-                return;
+                if (url != null) {
+                    request.getRequestDispatcher(url).forward(request, response);
+                } else {
+                    return;
+                }
             case "signup":
                 url = signUpDoPost(request, response);
-                
-                if(url == null){
+
+                if (url == null) {
                     response.sendRedirect("home");
-                }else{
+                } else {
                     request.getRequestDispatcher(url).forward(request, response);
                 }
                 return;
             default:
                 url = "views/home.jsp";
         }
-        
+
     }
 
     /**
@@ -171,8 +175,8 @@ public class LogServlet extends HttpServlet {
             account.setEmail(email);
             accountDAO.createAccount(account);
             request.getSession().setAttribute("account",
-                    account); 
-            
+                    account);
+
             return null;
         }
 

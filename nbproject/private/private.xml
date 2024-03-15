@@ -2,18 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/src/java/model/Cart.java</file>
-            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/src/java/controller/homepage/ProcessServlet.java</file>
-            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/src/java/dal/OrderDAO.java</file>
-            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/src/java/controller/homepage/ProductDetailServlet.java</file>
-            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/web/views/detail.jsp</file>
-            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/src/java/controller/homepage/HomeServlet.java</file>
-            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/web/views/admin/orderdetail.jsp</file>
-            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/src/java/controller/homepage/CheckoutServlet.java</file>
-            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/web/views/user/cart.jsp</file>
-            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/src/java/controller/homepage/BuyProductServlet.java</file>
-            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/web/views/user/checkout.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

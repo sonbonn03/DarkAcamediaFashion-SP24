@@ -62,7 +62,7 @@
                                 <label class="custom-file-label" >Choose file</label>
                             </div>
                         </div>
-                        <img id="previewImage" src="#" alt="Preview"
+                        <img id="previewImage2" src="#" alt="Preview"
                              style="display: none; max-width: 300px; max-height: 300px;">
                     </div>
                     <!--Description-->
@@ -116,13 +116,15 @@
         }
     }
     function displayImage(input) {
-        var previewImage = document.getElementById("previewImage");
+        var previewImage = document.getElementById("previewImage2");
+        console.log(previewImage);
         var file = input.files[0];
         var reader = new FileReader();
         reader.onload = function (e) {
             previewImage.src = e.target.result;
             previewImage.style.display = "block";
         }
+        console.log(previewImage.src);
         reader.readAsDataURL(file);
     }
 </script>

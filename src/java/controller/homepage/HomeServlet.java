@@ -41,7 +41,7 @@ public class HomeServlet extends HttpServlet {
         session.setAttribute("listProduct", listProduct);
         session.setAttribute("listCategory", listCategory);
         String url = request.getRequestURI();
-        session.setAttribute("prevPage", url);
+        session.setAttribute("stayPage", url);
         
         //Cart
         Cookie[] arr = request.getCookies();

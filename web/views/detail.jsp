@@ -103,7 +103,7 @@
                                 <p class="mb-3">Category: ${ProductFoundId.category.name}</p>
                                 <h5 class="fw-bold mb-3">$${ProductFoundId.price} /kg</h5>
                                 <p class="mb-4">${ProductFoundId.category.description}</p>
-                                <form method="get" action="buy">
+                                <form method="get" action="buy" id="formBuy">
                                     <input type="text" name="pid" value="${ProductFoundId.id}" hidden/>
                                     <div class="input-group quantity mb-5" style="width: 100px;">
                                         

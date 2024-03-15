@@ -25,7 +25,6 @@ public class OrderDAO extends DBContext {
         Date date = new Date();
         Timestamp timestamp = new Timestamp(date.getTime());
         try {
-
             String sqlOrder = "INSERT INTO [dbo].[Order]\n"
                     + "           ([FullName]\n"
                     + "           ,[Phone]\n"
