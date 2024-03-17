@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import model.Orders;
 
-@WebServlet(name="ManagerOrderServlet", urlPatterns={"/admin/orders"})
 public class ManagerOrderServlet extends HttpServlet {
    
     
@@ -20,10 +19,10 @@ public class ManagerOrderServlet extends HttpServlet {
     throws ServletException, IOException {
         OrderDAO orderDao = new OrderDAO();
         ArrayList<Orders> listOrders = orderDao.getOrders();
-        
+        System.out.println(listOrders);
         request.setAttribute("orders", listOrders);
         
-        request.getRequestDispatcher("../views/admin/managerOrder.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/admin/order.jsp").forward(request, response);
     } 
 
     

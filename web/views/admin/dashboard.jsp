@@ -88,12 +88,12 @@
                                                 <td name="description">${p.description}</td>
                                                 <td>
                                                     <button type="button" class="btn btn-outline-success"
-                                                            data-toggle="modal" data-target="#editProduct"
+                                                            data-toggle="modal" data-target="#editModal"
                                                             onclick="editProduct(this)"> 
                                                         Edit 
                                                     </button>
                                                     <button type="button" class="btn btn-outline-danger"
-                                                            data-toggle="modal" data-target="#delete-product-modal"
+                                                            data-toggle="modal" data-target="#deleteModal"
                                                             onclick="deleteProduct(${p.id})">
                                                         Delete
                                                     </button>

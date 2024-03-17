@@ -18,7 +18,7 @@ import model.Account;
  *
  * @author Admin
  */
-public class LogServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     AccountDAO accountDAO = new AccountDAO();
 

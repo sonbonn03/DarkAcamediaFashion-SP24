@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/src/java/controller/admin/DashBoardServlet.java</file>
+            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/src/java/controller/admin/ProductAdminServlet.java</file>
+            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/web/views/admin/editProduct.jsp</file>
+            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/web/views/admin/dashboard.jsp</file>
+            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/src/java/controller/admin/ManagerOrderServlet.java</file>
+            <file>file:/D:/SE_Semester_4/AssignmentPRJ_SP24/FruitShop/web/WEB-INF/web.xml</file>
+        </group>
     </open-files>
 </project-private>

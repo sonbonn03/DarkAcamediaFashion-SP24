@@ -37,28 +37,45 @@
         <servlet-class>controller.admin.ProductAdminServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ManagerOrderServlet</servlet-name>
+        <servlet-class>controller.admin.ManagerOrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderDetailServlet</servlet-name>
+        <servlet-class>controller.admin.OrderDetailServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>controller.log.LogServlet</servlet-class>
+        <servlet-class>controller.log.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BuyProductServlet</servlet-name>
         <servlet-class>controller.homepage.BuyProductServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>HomeController</servlet-name>
-        <url-pattern>/home</url-pattern>
+        <servlet-name>DashBoardServlet</servlet-name>
+        <url-pattern>/admin/dashboard</url-pattern>
     </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>ProductDetailServlet</servlet-name>
         <url-pattern>/product-detail</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>DashBoardServlet</servlet-name>
-        <url-pattern>/admin/dashboard</url-pattern>
+        <servlet-name>HomeController</servlet-name>
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ProductAdminServlet</servlet-name>
         <url-pattern>/admin/product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManagerOrderServlet</servlet-name>
+        <url-pattern>/admin/orders</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderDetailServlet</servlet-name>
+        <url-pattern>/admin/orderDetail</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>

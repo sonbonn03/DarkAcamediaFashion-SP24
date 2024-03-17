@@ -85,7 +85,7 @@ public class OrderDAO extends DBContext {
 
     public ArrayList<Orders> getOrders() {
         ArrayList<Orders> orders = new ArrayList<>();
-        String sql = "SELECT  [id]\n"
+        String sql = "SELECT [id]\n"
                 + "      ,[FullName]\n"
                 + "      ,[Phone]\n"
                 + "      ,[Address]\n"

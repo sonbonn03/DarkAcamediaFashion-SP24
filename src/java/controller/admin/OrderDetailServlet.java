@@ -15,8 +15,7 @@ import model.Orders;
 /*
  * @author HuynhPhan
  */
-@WebServlet(name="OrderDetail", urlPatterns={"/admin/orderDetail"})
-public class OrderDetail extends HttpServlet {
+public class OrderDetailServlet extends HttpServlet {
    
   
     
